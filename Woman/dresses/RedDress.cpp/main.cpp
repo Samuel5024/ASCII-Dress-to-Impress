@@ -7,13 +7,13 @@ int main() {
     string picture;
     int i = 0;
 
-    while(getline(redDress, picture)) { // Reads each line until EOF
+    while(getline(redDress, picture)) { 
         if(i >= 23) {
-            cout << "\033[31m" << picture << "\033[0m" << endl; // Red color after line 23
+            cout << "\033[31m" << picture << "\033[0m" << endl; 
         } else {
-            cout << picture << endl; // Default color before line 23
+            cout << picture << endl; 
         }
-        i++; // Increment line counter
+        i++;
     }
 
     redDress.close();
