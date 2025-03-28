@@ -1,9 +1,8 @@
 #include <iostream>
 #include <fstream>
-#include "buttonDown.h"
 using namespace std;
 
-void displayButtonPattern() {
+int main() {
     fstream shirt("buttonDown.txt");
     string buttons;
     int height = 0;
@@ -25,4 +24,5 @@ void displayButtonPattern() {
         height++;
     }
     shirt.close();
+    return 0;
 }

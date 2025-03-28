@@ -1,9 +1,8 @@
 #include <fstream>
 #include <iostream>
-#include "checkerboard.h"
 using namespace std;
 
-void displayCheckerPattern() {
+int main() {
     fstream shirt("checkerboard.txt");
     string checkerboard;
     int row = 0;//track row number
@@ -27,4 +26,5 @@ void displayCheckerPattern() {
     }
     
     shirt.close();
+    return 0;
 }

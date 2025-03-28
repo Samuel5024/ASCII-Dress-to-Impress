@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
-#include "strippedShirt.h"
 using namespace std;
 
-void displayStripedPattern()
+
+int main()
 {
     fstream shirt("stripes.txt"); 
     string stripes;
@@ -25,4 +25,5 @@ void displayStripedPattern()
     }
     
     shirt.close();
+    return 0;
 }
