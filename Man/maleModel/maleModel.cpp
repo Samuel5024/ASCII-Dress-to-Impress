@@ -1,10 +1,10 @@
-#include <iostream>
-#include <fstream>
-using namespace std;
+#include "maleModel.h"
 
 void displayMaleModel() {
     // Open the file "man.txt" for reading
-    ifstream model("man.txt");
+    ifstream model("./man.txt");
+
+    cout << model.is_open() << endl;
 
     // String variable to store each line from the file
     string man;
@@ -12,7 +12,7 @@ void displayMaleModel() {
     // Loop to read and print exactly 134 lines from the file
     for (int i = 0; i < 134; i++) {
         getline(model, man); // Read one line from the file into "man"
-        cout << man << endl; // Output the line to the console
+        cout << man; // Output the line to the console
     }
 
     // Close the file after reading

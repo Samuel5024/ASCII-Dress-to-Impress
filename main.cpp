@@ -2,10 +2,12 @@
 #include "Man/MaleClothes.h"
 #include "Woman/femaleClothes.h"
 #include <map>
+#include "Man/maleModel/maleModel.h"
 
 using namespace std;
 
 int main() {
+    displayMaleModel();
     int shirtChoice, pantChoice;
 
     // Display options for shirts

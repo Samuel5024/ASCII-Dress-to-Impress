@@ -1,7 +1,7 @@
 #include "femaleClothes.h"
 
 femaleClothes::femaleClothes() {
-  displayFemaleModel();
+  displayFModel();
 }
 
 // Set the shirt option

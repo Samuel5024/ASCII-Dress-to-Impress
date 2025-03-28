@@ -25,6 +25,7 @@ include_directories(Woman/Blouse/pinkBlouse)
 
 add_executable(ASCII_Dress_to_Impress
         Man/MaleModel/maleModel.cpp
+        Man/maleModel/man.txt
     Man/Pants/cargo/cargo.cpp
     Man/Pants/cargo/cargo.h
     Man/Pants/dress/dress.cpp
@@ -64,3 +65,4 @@ add_executable(ASCII_Dress_to_Impress
         Woman/Blouse/pinkBlouse/pinkBlouse.h
         Woman/FemaleClothes.h
     main.cpp)
+configure_file(man/maleModel/man.txt ${CMAKE_BINARY_DIR} COPYONLY)
