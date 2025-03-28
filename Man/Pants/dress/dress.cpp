@@ -1,9 +1,8 @@
 #include <iostream>
 #include <fstream>
-#include "dress.h"
 using namespace std;
 
-void displayDressPattern() {
+int main() {
 	fstream pants("dresspants.txt");
 	string dresspants;
 	int row = 0;
@@ -33,4 +32,5 @@ void displayDressPattern() {
 	}
 
 	pants.close();
+	return 0;
 }
