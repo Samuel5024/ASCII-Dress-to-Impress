@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    ifstream redDress("RedDress.txt");
+    ifstream redDress("redDress.txt");
     string picture;
     int i = 0;
 
