@@ -21,7 +21,7 @@ void displayCargoPattern()
         for (size_t col = 0; col < width; col++) {
 
             // Apply a different color to specific row ranges
-            if ((row >= 25 && row <= 35) || (row >= 2 && row <= 4)) {
+            if ((row >= 14 && row <= 19) || (row >= 1 && row <= 2)) {
                 cout << "\033[96m" << cargo[col]; // Light cyan for these rows
             }
             else {
