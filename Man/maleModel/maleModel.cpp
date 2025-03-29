@@ -9,10 +9,9 @@ void displayMaleModel() {
     // String variable to store each line from the file
     string man;
 
-    // Loop to read and print exactly 134 lines from the file
-    for (int i = 0; i < 134; i++) {
-        getline(model, man); // Read one line from the file into "man"
-        cout << man; // Output the line to the console
+    // Print every line of the file until the end of the file
+    while (getline(model, man)) {
+        cout << man << endl;
     }
 
     // Close the file after reading
