@@ -3,15 +3,15 @@
 void displayRedDressPattern() {
     ifstream redDress("redDress.txt");
     string picture;
-    int i = 0;
+    int row = 0;
 
     while(getline(redDress, picture)) { 
-        if(i >= 23) {
-            cout << "\033[31m" << picture << "\033[0m" << endl; 
+        if(i >= 17) {
+            cout << "\033[2;31m" << picture << "\033[0m" << endl; 
         } else {
-            cout << picture << endl; 
+            court << "\033[31m" << picture << endl; 
         }
-        i++;
+        row++;
     }
     redDress.close();
 }
