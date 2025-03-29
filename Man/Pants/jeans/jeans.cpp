@@ -23,7 +23,7 @@ void displayJeansPattern() {
             if (row >= 2 && row <= 4) {
 
                 // Use blue for specific columns to simulate a pattern (e.g., seams or pockets)
-                if (col % 7 == 0 || col % 7 == 1) {
+                if (col % 6 == 0 || col % 6 == 1) {
                     cout << "\033[34m" << jeans[col];  // Blue color
                 }
                 else {
