@@ -10,7 +10,7 @@ void displayJeanShortsPattern() {
         
         for(size_t col = 0; col < width; col++) {
             
-            if(row >= 3 && row <= 4){
+            if(row >= 1 && row <= 2){
                 
                cout << "\033[30m" << jeanShorts[col];
             } 
