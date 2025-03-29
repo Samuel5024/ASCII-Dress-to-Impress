@@ -15,12 +15,13 @@ void displayButtonPattern() {
     while (getline(shirt, buttons)) {
         // Determine the width (length) of the current line
         int width = buttons.length();
+        int center = width / 2;
 
         // Iterate over each character in the line
         for (size_t col = 0; col < width; col++) {
 
             // Apply a specific pattern for the middle column (buttons) for rows with height >= 5
-            if (height >= 5 && col >= width / 2 - 1 && col <= width / 2 + 1) {
+            if (height >= 1 && col >= center - 1 && col <= center + 1) {
                 cout << "\033[97m" << buttons[col];  // White color for button columns
             }
             else {
