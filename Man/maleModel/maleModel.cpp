@@ -9,7 +9,7 @@ void displayMaleModel() {
     // String variable to store each line from the file
     string man;
 
-    // Read each line of the file
+    // Read each line from the file
     while (getline(model, man)) {
         cout << man << endl;
     }
