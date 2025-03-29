@@ -20,7 +20,7 @@ void displayButtonPattern() {
         // Iterate over each character in the line
         for (size_t col = 0; col < width; col++) {
 
-            // Apply a specific pattern for the middle column (buttons) for rows with height >= 5
+            // Apply a specific pattern for the middle column (buttons) for rows with height >= 1
             if (height >= 1 && col >= center - 1 && col <= center + 1) {
                 cout << "\033[97m" << buttons[col];  // White color for button columns
             }
