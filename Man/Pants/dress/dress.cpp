@@ -19,11 +19,11 @@ void displayDressPattern() {
 		// Iterate over each character in the line
 		for (size_t col = 0; col < width; col++) {
 
-			// Apply a white stripe for rows 2 to 3
-			if (row >= 2 && row <= 3) {
+			// Apply a white stripe for rows 1 to 2
+			if (row >= 1 && row <= 2) {
 
 				// Insert black stripes to simulate belt loops at specific column positions
-				if (col % 8 == 1 || col % 8 == 0) {
+				if (col % 3 == 1 || col % 3 == 0) {
 					cout << "\033[30m" << dresspants[col];  // Black color for belt loops
 				}
 				else {
