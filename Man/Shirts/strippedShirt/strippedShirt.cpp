@@ -14,12 +14,12 @@ void displayStrippedPattern() {
     // Read each line from the file
     while (getline(shirt, stripes)) {
 
-        // If row number is between 15 and 25, print with blue color
-        if (row >= 15 && row <= 25) {
+        // If row number is between 6 and 8, print with blue color
+        if (row >= 6 && row <= 8) {
             cout << "\033[94m" << stripes << endl;  // Blue color
         }
-        // If row number is between 35 and 45, print with red color
-        else if (row >= 35 && row <= 45) {
+        // If row number is between 9 and 10, print with red color
+        else if (row >= 9 && row <= 10) {
             cout << "\033[31m" << stripes << endl;  // Red color
         }
         // For all other rows, print with white color
