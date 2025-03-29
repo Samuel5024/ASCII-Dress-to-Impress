@@ -20,7 +20,7 @@ void displayCheckerPattern() {
         for (size_t col = 0; col < width; col++) {
 
             // Check if the sum of the row and column indices divided by 2 is even
-            // This will create 5x5 squares every 5 rows and columns
+            // This will create 2x2 squares every 2 rows and columns
             if ((row / 2 + col / 2) % 2 == 0) {
                 cout << "\033[37m" << checkerboard[col];  // White color for even squares
             }
