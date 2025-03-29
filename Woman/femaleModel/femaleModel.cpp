@@ -2,10 +2,10 @@
 
 void displayFModel() {
      fstream female("female.txt");
- string model;
+     string model;
 
-while(getline(female, model)){
-     cout << model << endl;
- }
- 
+     while(getline(female, model)){
+          cout << model << endl;
+     }
+     female.close();
 }
