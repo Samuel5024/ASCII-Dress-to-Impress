@@ -1,87 +1,84 @@
 #include "femaleClothes.h"
 
-femaleClothes::femaleClothes() : comboOption(0), dressOption(0), blouseOption(0), fPantOption(0) {
-  displayFModel();
-}
+// Constructor: Initializes variables
+femaleClothes::femaleClothes() : comboOption(0), dressOption(0), blouseOption(0), fPantOption(0), totalLines(0) {}
 
 // Set the blouse option
 void femaleClothes::setBlouse(int option) {
-  this->blouseOption = option;
-  myBlouse.setBlouse(option);  // Set the blouse in the blouse object
-  totalLines = 18;
+    this->blouseOption = option;
+    myBlouse.setBlouse(option);
 }
 
 // Set the pants option
 void femaleClothes::setFPants(int option) {
-  this->fPantOption = option;
-  myPant.setFPant(option);   // Fixed method name: setFPant not setFPants
-  totalLines = 21;
+    this->fPantOption = option;
+    myFPant.setFPant(option);
 }
 
+// Set the dress option
 void femaleClothes::setDress(int option) {
-  this->dressOption = option;
-  myDress.setDress(option);
-  totalLines = 39;
+    this->dressOption = option;
+    myDress.setDress(option);
 }
 
+// Set the outfit combination choice
 void femaleClothes::setCombo(int option) {
-  if (comboOptions.find(option) != comboOptions.end()) {
-    this->comboOption = option;
-  } else {
-    cout << "Invalid combo option!" << endl;
-  }
+    if (comboOptions.find(option) != comboOptions.end()) {
+        comboOption = option;
+    } else {
+        cout << "Invalid selection. Choose either 1 for Dress or 2 for Blouse and Pants." << endl;
+    }
 }
 
+// Overloaded << operator to display the female model with selected outfit
 ostream& operator<<(ostream& os, const femaleClothes& obj) {
-  if (comboOptions.find(obj.comboOption) != comboOptions.end()) {
-    switch (obj.comboOption) {
-      case 1: {
-        ifstream model("femaleModel/female.txt"); // Reopen the model file
-        string line;
-        int lineCount = 0;
+    ifstream modelFile("Woman/femaleModel/femaleModel.txt");
 
-        if(!model) {
-          os << "Error: Could not open female model file.\n";
-          return os;
+    if (!modelFile) {
+        modelFile.open("../Woman/femaleModel/femaleModel.txt");
+        if (!modelFile) {
+            os << "Error: Could not open female model file. Check file path." << endl;
+            return os;
         }
-
-        // Display the first 21 lines (base model part)
-        while (lineCount < 10 && getline(model, line)) {
-          os << line << endl;
-          lineCount++;
-        }
-        model.close();
-
-        obj.myDress.getDress();
-        break;
-      }
-      case 2: {
-        ifstream model("femaleModel/female.txt");
-        string line;
-        int lineCount = 0;
-
-        if(!model) {
-          os << "Error: Could not open female model file.\n";
-          return os;
-        }
-
-        // Display the first 21 lines (base model part)
-        while (lineCount < 21 && getline(model, line)) {
-          os << line << endl;
-          lineCount++;
-        }
-        model.close();
-
-        obj.myBlouse.getBlouse();
-        obj.myPant.getFPant();
-        break;
-      }
-      default:
-        os << "Please select a valid combination option.\n";
-        break;
     }
-  } else {
-    os << "Please select a valid combination option.\n";
-  }
-  return os;
+
+    vector<string> modelLines;
+    string line;
+
+    // Read model lines into vector
+    while (getline(modelFile, line)) {
+        modelLines.push_back(line);
+    }
+    modelFile.close();
+
+    int totalModelLines = modelLines.size();
+    const int blouseLines = 17;
+    const int pantsLines = 23;
+
+    // Display the upper body (first 8 lines)
+    for (int i = 0; i < 8 && i < totalModelLines; i++) {
+        os << modelLines[i] << endl;
+    }
+
+    // Display the selected clothing based on combo choice
+    if (obj.comboOption == 1) { // Dress
+        obj.myDress.getDress();
+    } else if (obj.comboOption == 2) { // Blouse and Pants
+        obj.myBlouse.getBlouse();
+        obj.myFPant.getFPant();
+    }
+
+    // Display the remaining body lines
+    for (int i = 8 + blouseLines + pantsLines; i < totalModelLines; i++) {
+        os << modelLines[i] << endl;
+    }
+
+    return os;
+}
+
+// Destructor: Displays final outfit
+femaleClothes::~femaleClothes() {
+    if (comboOption > 0) {
+        cout << *this; // Invoke overloaded operator<<
+    }
 }

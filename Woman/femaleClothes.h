@@ -3,6 +3,7 @@
 #define FEMALECLOTHES_H
 
 #include <iostream>
+#include <vector>
 #include <string>
 #include <map>
 #include <fstream>
@@ -21,10 +22,10 @@ const map<int, string> comboOptions = {
 
 class femaleClothes {
 private:
-  dresses myDress;      // Changed from string to dresses class
-  fPants myPant;        // Changed from string to fPants class
-  blouse myBlouse;      // Changed from string to blouse class
-  int comboOption;      // Added missing member variable
+  dresses myDress;
+  fPants myFPant;
+  blouse myBlouse;
+  int comboOption;
   int dressOption;
   int blouseOption;
   int fPantOption;
@@ -49,7 +50,7 @@ public:
   friend ostream& operator<<(ostream& os, const femaleClothes& obj);
 
   // Destructor
-  ~femaleClothes() = default;
+  ~femaleClothes();
 };
 
 #endif //FEMALECLOTHES_H

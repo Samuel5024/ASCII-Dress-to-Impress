@@ -2,6 +2,8 @@
 #define MALECLOTHES_H
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <vector>
 #include "Pants/mPants.h"
 #include "Shirts/mShirts.h"
 #include "maleModel/maleModel.h"
@@ -20,7 +22,7 @@ public:
   void setShirt(int option);  // Set the shirt option
   void setPants(int option);  // Set the pants option
   friend ostream& operator<<(ostream& os, maleClothes& obj); // Overloaded output operator
-  ~maleClothes();        // Destructor to display selected model
+  ~maleClothes() = default;        // Destructor to display selected model
 };
 
 #endif // MALECLOTHES_H

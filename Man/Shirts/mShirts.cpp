@@ -2,7 +2,6 @@
 
 void mShirts::getShirt() const {
     if (shirtOptions.find(shirtOption) != shirtOptions.end()) {
-        cout << "You have selected: " << shirtOptions.at(shirtOption) << endl;
         switch (shirtOption) {
             case 1:
                 displayButtonPattern();  // Display Button Down Shirt pattern

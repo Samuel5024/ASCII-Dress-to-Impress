@@ -2,7 +2,6 @@
 
 void mPants::getPants() const {
     if (pantsOptions.find(pantsOption) != pantsOptions.end()) {
-        cout << "You have selected: " << pantsOptions.at(pantsOption) << endl;
         switch (pantsOption) {
             case 1:
                 displayCargoPattern(); // Display Cargo Pants pattern
