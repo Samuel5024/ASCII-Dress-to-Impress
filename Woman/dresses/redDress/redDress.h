@@ -7,4 +7,4 @@ using namespace std;
 
 void displayRedDressPattern();
 
-#endif //REDDRESS
+#endif //REDDRESS_H

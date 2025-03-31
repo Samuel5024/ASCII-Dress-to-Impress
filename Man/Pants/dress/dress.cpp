@@ -2,19 +2,19 @@
 
 // Function to display the dress pants pattern
 void displayDressPattern() {
-	// Open the file "dresspants.txt" for reading
-	fstream pants("dresspants.txt");
+	// Open the file "dressPants.txt" for reading
+	fstream pants("Man/Pants/dress/dressPants.txt");
 
 	// String variable to store each line from the file
-	string dresspants;
+	string dressPants;
 
 	// Variable to track the row number
 	int row = 0;
 
 	// Read each line from the file
-	while (getline(pants, dresspants)) {
+	while (getline(pants, dressPants)) {
 		// Determine the width (length) of the current line
-		int width = dresspants.length();
+		int width = dressPants.length();
 
 		// Iterate over each character in the line
 		for (size_t col = 0; col < width; col++) {
@@ -24,15 +24,15 @@ void displayDressPattern() {
 
 				// Insert black stripes to simulate belt loops at specific column positions
 				if (col % 3 == 1 || col % 3 == 0) {
-					cout << "\033[30m" << dresspants[col];  // Black color for belt loops
+					cout << "\033[30m" << dressPants[col];  // Black color for belt loops
 				}
 				else {
-					cout << "\033[37m" << dresspants[col];  // White color for the stripe
+					cout << "\033[37m" << dressPants[col];  // White color for the stripe
 				}
 			}
 			else {
 				// Apply black color for all other rows
-				cout << "\033[30m" << dresspants[col];
+				cout << "\033[30m" << dressPants[col];
 			}
 		}
 

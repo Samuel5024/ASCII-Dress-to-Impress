@@ -1,7 +1,7 @@
 #include "tightDress.h"
 
 void displayTightDressPattern() {
-    fstream dress("tightDress.txt");
+    fstream dress("Woman/dresses/tightDresstightDress.txt");
     string tightDress;
     
     while(getline(dress, tightDress)) {

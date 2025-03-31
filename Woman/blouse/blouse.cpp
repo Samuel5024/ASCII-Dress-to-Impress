@@ -23,6 +23,6 @@ void blouse::setBlouse(int option) {
     if (blouseOptions.find(option) != blouseOptions.end()) {
         blouseOption = option;  // Update blouseOption with valid option
     } else {
-        cout << "Invalid Pants Option!" << endl;  // Handle invalid selection
+        cout << "Invalid Blouse Option!" << endl;  // Handle invalid selection
     }
 }

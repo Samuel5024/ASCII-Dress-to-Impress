@@ -2,10 +2,10 @@
 #define MALECLOTHES_H
 #include <string>
 #include <iostream>
-#include <map>
 #include "Pants/mPants.h"
 #include "Shirts/mShirts.h"
 #include "maleModel/maleModel.h"
+#include <filesystem>
 using namespace std;
 
 class maleClothes {
@@ -15,7 +15,6 @@ private:
   int shirtOption;       // Stores shirt option
   int pantOption;        // Stores pant option
   int totalLines;
-
 public:
   maleClothes();         // Constructor to display base model
   void setShirt(int option);  // Set the shirt option

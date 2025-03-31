@@ -1,7 +1,7 @@
 #include "jeanShorts.h"
 
 void displayJeanShortsPattern() {
-    fstream pants("jeanShorts.txt");
+    fstream pants("Woman/fPants/jeanShorts/jeanShorts.txt");
     string jeanShorts;
     int row = 0;
     

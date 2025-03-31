@@ -1,15 +1,15 @@
 #include "redDress.h"
 
 void displayRedDressPattern() {
-    ifstream redDress("redDress.txt");
+    ifstream redDress("Woman/dresses/redDress/redDress.txt");
     string picture;
     int row = 0;
 
-    while(getline(redDress, picture)) { 
-        if(i >= 17) {
-            cout << "\033[2;31m" << picture << "\033[0m" << endl; 
+    while(getline(redDress, picture)) {
+        if(row >= 17) {
+            cout << "\033[2;31m" << picture << "\033[0m" << endl;
         } else {
-            court << "\033[31m" << picture << endl; 
+            cout << "\033[31m" << picture << endl;
         }
         row++;
     }

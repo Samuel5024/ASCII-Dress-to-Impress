@@ -1,10 +1,25 @@
 #include "maleModel.h"
 
 void displayMaleModel() {
-    // Open the file "man.txt" for reading
-    ifstream model("./man.txt");
+    // Try multiple possible paths to find the file
+    ifstream model("Man/maleModel/man.txt");
 
-    cout << model.is_open() << endl;
+    if (!model.is_open()) {
+        // Try alternative path
+        model.close();
+        model.open("Man/maleModel/man.txt");
+
+        if (!model.is_open()) {
+            // Try another alternative path
+            model.close();
+            model.open("Man/maleModel/man.txt");
+
+            if (!model.is_open()) {
+                cout << "Error: Could not open man.txt file. Check file path." << endl;
+                return;
+            }
+        }
+    }
 
     // String variable to store each line from the file
     string man;

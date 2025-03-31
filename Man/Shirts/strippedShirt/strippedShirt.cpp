@@ -2,8 +2,8 @@
 
 // Function to display the striped shirt pattern
 void displayStrippedPattern() {
-    // Open the file "stripes.txt" for reading
-    fstream shirt("stripes.txt");
+    // Open the file "strippedShirt.txt" for reading
+    fstream shirt("Man/Shirts/strippedShirt/strippedShirt.txt");
 
     // String variable to store each line from the file
     string stripes;

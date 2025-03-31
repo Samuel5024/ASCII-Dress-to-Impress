@@ -3,7 +3,7 @@
 // Function to display the jeans pattern
 void displayJeansPattern() {
     // Open the file "jeans.txt" for reading
-    ifstream pants("jeans.txt");
+    ifstream pants("Man/Pants/jeans/jeans.txt");
 
     // String variable to store each line from the file
     string jeans;

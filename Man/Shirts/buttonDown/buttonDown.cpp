@@ -3,7 +3,8 @@
 // Function to display the button-down shirt pattern
 void displayButtonPattern() {
     // Open the file "buttonDown.txt" for reading
-    fstream shirt("buttonDown.txt");
+    fstream shirt("Man/Shirts/buttonDown/buttonDown.txt");
+    cout << shirt.is_open() << endl;
 
     // String variable to store each line from the file
     string buttons;
