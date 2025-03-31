@@ -7,7 +7,7 @@ void displayFModel() {
      if (!model.is_open()) {
           // Try alternative path
           model.close();
-          model.open("Woman/femaleModel/femaleModel.txt");
+          model.open("../Woman/femaleModel/femaleModel.txt");
 
           if (!model.is_open()) {
                // Try another alternative path

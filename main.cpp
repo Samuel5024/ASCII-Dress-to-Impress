@@ -2,10 +2,21 @@
 #include "Man/maleClothes.h"
 #include "Woman/femaleClothes.h"
 #include <map>
+#include <filesystem>  // Add this to the includes
 
 using namespace std;
 
 int main() {
+    string basePath = "";
+    ifstream test("Man/maleModel/man.txt");
+    if (!test.is_open()) {
+        basePath = "./";
+    }
+    test.close();
+    cout << "Current working directory: " << filesystem::current_path() << endl;
+
+    cout << "Using base path: " << basePath << endl;
+
     bool continuePlaying = true;
 
     while (continuePlaying) {

@@ -25,11 +25,11 @@ void maleClothes::setPants(int option) {
 // Overloaded << operator to display the selected model with shirt and pants
 ostream& operator<<(ostream& os, maleClothes& obj) {
   // Use a relative path that includes the directory name
-  ifstream model("MaleModel/man.txt");
+  ifstream model("Man/MaleModel/man.txt");
 
   if(!model) {
     // Try an alternative path if the first one fails
-    ifstream model2("./Man/maleModel/man.txt");
+    ifstream model2("../Man/maleModel/man.txt");
 
     if(!model2) {
       os << "Error: Could not open male model file. Check file path." << endl;

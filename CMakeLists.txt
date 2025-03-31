@@ -85,6 +85,7 @@ add_executable(ASCII_Dress_to_Impress
         Woman/femaleClothes.h
         main.cpp)
 
+
 # Configure text files for copying
 configure_file(Man/maleModel/man.txt ${CMAKE_BINARY_DIR} COPYONLY)
 configure_file(Man/Pants/cargo/cargoPants.txt ${CMAKE_BINARY_DIR} COPYONLY)
@@ -103,3 +104,6 @@ configure_file(Woman/femaleModel/femaleModel.txt ${CMAKE_BINARY_DIR} COPYONLY)
 configure_file(Woman/fPants/blackJeans/blackJeans.txt ${CMAKE_BINARY_DIR} COPYONLY)
 configure_file(Woman/fPants/jeanShorts/jeanShorts.txt ${CMAKE_BINARY_DIR} COPYONLY)
 configure_file(Woman/fPants/leggings/leggings.txt ${CMAKE_BINARY_DIR} COPYONLY)
+
+set_target_properties(ASCII_Dress_to_Impress PROPERTIES
+        VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")

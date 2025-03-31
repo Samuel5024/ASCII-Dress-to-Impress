@@ -3,7 +3,7 @@
 void displayCargoPattern()
 {
     // Open the file "cargoPants.txt" for reading
-    fstream pants("Man/Pants/cargo/cargoPants.txt");
+    fstream pants("../Man/Pants/cargo/cargoPants.txt");
 
     // String variable to store each line from the file
     string cargo;
