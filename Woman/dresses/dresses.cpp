@@ -2,7 +2,6 @@
 
 void dresses::getDress() const {
     if (dressOptions.find(dressesOption) != dressOptions.end()) {
-        cout << "You have selected: " << dressOptions.at(dressesOption) << endl;
         switch (dressesOption) {
             case 1:
                 displayRedDressPattern(); // Display Red Dress pattern

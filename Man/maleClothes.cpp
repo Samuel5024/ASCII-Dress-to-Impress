@@ -66,5 +66,3 @@ ostream& operator<<(ostream& os, maleClothes& obj) {
 
   return os;
 }
-
-// Destructor: Display the final version with selected clothes
