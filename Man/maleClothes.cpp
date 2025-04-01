@@ -1,7 +1,7 @@
 #include "maleClothes.h"
 
 // Constructor: Display the base male model
-maleClothes::maleClothes() : totalLines(0) {
+maleClothes::maleClothes(const string& filename) : baseCharacter(filename), totalLines(0) {
   displayMaleModel();
 }
 
@@ -15,6 +15,87 @@ void maleClothes::setShirt(int option) {
 void maleClothes::setPants(int option) {
   this->pantOption = option;
   myPant.setPants(option);   // Set the pants in the pants object
+}
+
+bool maleClothes::printToFile() const {
+  ofstream outFile(outputFileName, ios::out | ios::app);
+
+  if (!outFile.is_open()) {
+    cerr << "Error: Unable to open file " << outputFileName << " for writing." << endl;
+    return false;
+  }
+
+  // Try to open the model file
+  ifstream model("Man/maleModel/man.txt");
+
+  if(!model) {
+    // Try an alternative path if the first one fails
+    ifstream model2("../Man/maleModel/man.txt");
+
+    if(!model2) {
+      outFile << "Error: Could not open male model file. Check file path." << endl;
+      outFile.close();
+      return false;
+    }
+
+    model.close();
+    model.open("../Man/maleModel/man.txt");  // Use the working path
+  }
+
+  string line;
+  vector<string> modelLines;
+
+  // Read all model lines
+  while(getline(model, line)) {
+    modelLines.push_back(line);
+  }
+  model.close();
+
+  int totalModelLines = modelLines.size();
+  const int shirtLines = 17;
+  const int pantsLines = 23;
+
+  // Write character information to file
+  outFile << "\n===== Male Character =====\n";
+  outFile << "Shirt: " << shirtOptions.at(shirtOption) << endl;
+  outFile << "Pants: " << pantsOptions.at(pantOption) << endl;
+  outFile << "\n";
+
+  // Display the first 8 lines (base model part)
+  for (int i = 0; i < 8 && i < totalModelLines; i++) {
+    outFile << modelLines[i] << endl;
+  }
+
+  // Capture shirt output
+  streambuf* oldCout = cout.rdbuf();
+  stringstream shirtStream;
+  cout.rdbuf(shirtStream.rdbuf());
+
+  myShirt.getShirt();
+
+  cout.rdbuf(oldCout);
+
+  // Write shirt content to file
+  outFile << shirtStream.str();
+
+  // Capture pants output
+  stringstream pantsStream;
+  cout.rdbuf(pantsStream.rdbuf());
+
+  myPant.getPants();
+
+  cout.rdbuf(oldCout);
+
+  // Write pants content to file
+  outFile << pantsStream.str();
+
+  // Display the remaining model lines (skipping lines covered by shirt and pants)
+  for (int i = 8 + shirtLines + pantsLines; i < totalModelLines; i++) {
+    outFile << modelLines[i] << endl;
+  }
+
+  outFile.close();
+  return true;
 }
 
 // Overloaded << operator to display the selected model with shirt and pants

@@ -1,7 +1,9 @@
 #include "femaleClothes.h"
 
 // Constructor: Initializes variables
-femaleClothes::femaleClothes() : comboOption(0), dressOption(0), blouseOption(0), fPantOption(0), totalLines(0) {}
+femaleClothes::femaleClothes(const string& fileName) : baseCharacter(fileName), comboOption(0), totalLines(0) {
+    displayFModel();
+}
 
 // Set the blouse option
 void femaleClothes::setBlouse(int option) {
@@ -28,6 +30,51 @@ void femaleClothes::setCombo(int option) {
     } else {
         cout << "Invalid selection. Choose either 1 for Dress or 2 for Blouse and Pants." << endl;
     }
+}
+
+bool femaleClothes::printToFile() const {
+    ofstream outFile(outputFileName, ios::out | ios::app);
+    if (!outFile.is_open()) {
+        cerr << "Error: Could not open file " << outputFileName << " for writing." << endl;
+        return false;
+    }
+
+    ifstream modelFile("Woman/femaleModel/femaleModel.txt");
+    if (!modelFile) {
+        modelFile.open("../Woman/femaleModel/femaleModel.txt");
+        if (!modelFile) {
+            outFile << "Error: Could not open female model file. Check file path." << endl;
+            outFile.close();
+            return false;
+        }
+    }
+
+    vector<string> modelLines;
+    string line;
+    while (getline(modelFile, line)) {
+        modelLines.push_back(line);
+    }
+    modelFile.close();
+
+    int totalModelLines = modelLines.size();
+    for (int i = 0; i < 8 && i < totalModelLines; i++) {
+        outFile << modelLines[i] << endl;
+    }
+
+    if (comboOption == 1) {
+        outFile << myDress << endl;
+    } else if (comboOption == 2) {
+        outFile << myBlouse << endl;
+        outFile << myFPant << endl;
+    }
+
+    for (int i = 8 + 17 + 23; i < totalModelLines; i++) {
+        outFile << modelLines[i] << endl;
+    }
+
+    outFile << "\n\n";
+    outFile.close();
+    return true;
 }
 
 // Overloaded << operator to display the female model with selected outfit

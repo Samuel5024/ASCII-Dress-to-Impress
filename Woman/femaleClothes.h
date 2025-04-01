@@ -10,7 +10,8 @@
 #include "dresses/dresses.h"  
 #include "fPants/fPants.h"    
 #include "blouse/blouse.h"    
-#include "femaleModel/femaleModel.h"  
+#include "femaleModel/femaleModel.h"
+#include "../baseCharacter.h"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ const map<int, string> comboOptions = {
   {2, "Blouse and Pants"}
 };
 
-class femaleClothes {
+class femaleClothes : public baseCharacter {
 private:
   dresses myDress;
   fPants myFPant;
@@ -32,7 +33,7 @@ private:
   int totalLines;
 
 public:
-  femaleClothes();
+  femaleClothes(const string& fileName = "game.txt");
 
   // Method to set the dress option
   void setDress(int option);
@@ -45,6 +46,8 @@ public:
   
   // Method to set the combo option
   void setCombo(int option);
+
+  bool printToFile() const override;
 
   // Overloaded output operator to display the clothing selections
   friend ostream& operator<<(ostream& os, const femaleClothes& obj);
