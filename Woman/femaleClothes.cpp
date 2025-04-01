@@ -32,51 +32,6 @@ void femaleClothes::setCombo(int option) {
     }
 }
 
-bool femaleClothes::printToFile() const {
-    ofstream outFile(outputFileName, ios::out | ios::app);
-    if (!outFile.is_open()) {
-        cerr << "Error: Could not open file " << outputFileName << " for writing." << endl;
-        return false;
-    }
-
-    ifstream modelFile("Woman/femaleModel/femaleModel.txt");
-    if (!modelFile) {
-        modelFile.open("../Woman/femaleModel/femaleModel.txt");
-        if (!modelFile) {
-            outFile << "Error: Could not open female model file. Check file path." << endl;
-            outFile.close();
-            return false;
-        }
-    }
-
-    vector<string> modelLines;
-    string line;
-    while (getline(modelFile, line)) {
-        modelLines.push_back(line);
-    }
-    modelFile.close();
-
-    int totalModelLines = modelLines.size();
-    for (int i = 0; i < 8 && i < totalModelLines; i++) {
-        outFile << modelLines[i] << endl;
-    }
-
-    if (comboOption == 1) {
-        outFile << myDress << endl;
-    } else if (comboOption == 2) {
-        outFile << myBlouse << endl;
-        outFile << myFPant << endl;
-    }
-
-    for (int i = 8 + 17 + 23; i < totalModelLines; i++) {
-        outFile << modelLines[i] << endl;
-    }
-
-    outFile << "\n\n";
-    outFile.close();
-    return true;
-}
-
 // Overloaded << operator to display the female model with selected outfit
 ostream& operator<<(ostream& os, const femaleClothes& obj) {
     ifstream modelFile("Woman/femaleModel/femaleModel.txt");
@@ -121,4 +76,19 @@ ostream& operator<<(ostream& os, const femaleClothes& obj) {
     }
 
     return os;
+}
+
+bool femaleClothes::printToFile() const {
+    ofstream outFile(outputFileName, ios::out | ios::app);
+    if (!outFile.is_open()) {
+        cerr << "Error: Could not open file " << outputFileName << " for writing." << endl;
+        return false;
+    }
+
+    // Use the overloaded operator<< to write to the file
+    outFile << *this;
+
+    outFile << "\n\n";
+    outFile.close();
+    return true;
 }
