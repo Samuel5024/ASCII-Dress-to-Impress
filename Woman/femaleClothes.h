@@ -50,7 +50,7 @@ public:
   friend ostream& operator<<(ostream& os, const femaleClothes& obj);
 
   // Destructor
-  ~femaleClothes();
+  ~femaleClothes() = default;
 };
 
 #endif //FEMALECLOTHES_H

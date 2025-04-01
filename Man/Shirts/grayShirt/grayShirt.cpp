@@ -11,7 +11,7 @@ void displayGrayPattern() {
     // Read each line from the file
     while (getline(shirt, grayShirt)) {
         // Display the line with gray color using ANSI escape code
-        cout << "\033[90m" << grayShirt << endl;  // Dark gray color
+        cout << "\\033[90m" << grayShirt << endl;  // Dark gray color
     }
 
     // Close the file after reading

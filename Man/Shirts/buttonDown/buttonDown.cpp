@@ -23,15 +23,15 @@ void displayButtonPattern() {
 
             // Apply a specific pattern for the middle column (buttons) for rows with height >= 1
             if (height >= 1 && col >= center - 1 && col <= center + 1) {
-                cout << "\033[97m" << buttons[col];  // White color for button columns
+                cout << "\\033[97m" << buttons[col];  // White color for button columns
             }
             else {
-                cout << "\033[31m" << buttons[col];  // Red color for the rest of the pattern
+                cout << "\\033[31m" << buttons[col];  // Red color for the rest of the pattern
             }
         }
 
         // Reset text color and move to the next line
-        cout << "\033[0m" << endl;
+        cout << "\\033[0m" << endl;
 
         // Increment height (row) counter
         height++;

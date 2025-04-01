@@ -5,7 +5,7 @@ void displayTightDressPattern() {
     string tightDress;
     
     while(getline(dress, tightDress)) {
-        cout << "\033[36m" << tightDress << endl;
+        cout << "\\033[36m" << tightDress << endl;
     }
     
     dress.close();

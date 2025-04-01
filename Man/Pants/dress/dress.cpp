@@ -24,20 +24,20 @@ void displayDressPattern() {
 
 				// Insert black stripes to simulate belt loops at specific column positions
 				if (col % 3 == 1 || col % 3 == 0) {
-					cout << "\033[30m" << dressPants[col];  // Black color for belt loops
+					cout << "\\033[30m" << dressPants[col];  // Black color for belt loops
 				}
 				else {
-					cout << "\033[37m" << dressPants[col];  // White color for the stripe
+					cout << "\\033[37m" << dressPants[col];  // White color for the stripe
 				}
 			}
 			else {
 				// Apply black color for all other rows
-				cout << "\033[30m" << dressPants[col];
+				cout << "\\033[30m" << dressPants[col];
 			}
 		}
 
 		// Reset text color and move to the next line
-		cout << "\033[0m" << endl;
+		cout << "\\033[0m" << endl;
 
 		// Increment row counter
 		row++;

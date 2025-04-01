@@ -22,15 +22,15 @@ void displayCheckerPattern() {
             // Check if the sum of the row and column indices divided by 2 is even
             // This will create 2x2 squares every 2 rows and columns
             if ((row / 2 + col / 2) % 2 == 0) {
-                cout << "\033[37m" << checkerboard[col];  // White color for even squares
+                cout << "\\033[37m" << checkerboard[col];  // White color for even squares
             }
             else {
-                cout << "\033[34m" << checkerboard[col];  // Blue color for odd squares
+                cout << "\\033[34m" << checkerboard[col];  // Blue color for odd squares
             }
         }
 
         // Reset text color and move to the next line
-        cout << "\033[0m" << endl;  // Reset color at the end of each line
+        cout << "\\033[0m" << endl;  // Reset color at the end of each line
         row++;  // Increment row counter
     }
 

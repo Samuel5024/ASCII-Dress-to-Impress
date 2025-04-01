@@ -20,16 +20,16 @@ void displayKhakisPattern() {
 
             // Apply black color for rows 1-2
             if (row >= 1 && row <= 2) {
-                cout << "\033[30m" << shorts[col];  // Black color for rows 1-2
+                cout << "\\033[30m" << shorts[col];  // Black color for rows 1-2
             }
             else {
                 // Apply a specific color (light orange) for the rest of the rows
-                cout << "\033[38;5;180m" << shorts[col];  // Light orange color
+                cout << "\\033[38;5;180m" << shorts[col];  // Light orange color
             }
         }
 
         // Reset text color and move to the next line
-        cout << "\033[0m" << endl;
+        cout << "\\033[0m" << endl;
 
         // Increment row counter
         row++;

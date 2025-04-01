@@ -75,10 +75,3 @@ ostream& operator<<(ostream& os, const femaleClothes& obj) {
 
     return os;
 }
-
-// Destructor: Displays final outfit
-femaleClothes::~femaleClothes() {
-    if (comboOption > 0) {
-        cout << *this; // Invoke overloaded operator<<
-    }
-}
