@@ -8,7 +8,7 @@ void displayCargoPattern() {
     string cargo;
 
     while(getline(pants, cargo)) {
-        cout << cargo << endl;
+        cout << "     " << cargo << endl;
     }
     pants.close();
 }

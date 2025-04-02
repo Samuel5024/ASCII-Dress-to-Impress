@@ -11,7 +11,7 @@ void displayGrayPattern() {
     // Read each line from the file
     while (getline(shirt, grayShirt)) {
         
-        cout << grayShirt << endl; 
+        cout << "  " << grayShirt << endl;
     }
 
     // Close the file after reading

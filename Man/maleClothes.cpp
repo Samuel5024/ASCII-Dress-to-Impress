@@ -7,7 +7,7 @@ maleClothes::maleClothes() : totalLines(0) {
 
 // Set the shirt option
 void maleClothes::setShirt(int option) {
-2  this->shirtOption = option;
+  this->shirtOption = option;
   myShirt.setShirt(option);  // Set the shirt in the shirt object
 }
 

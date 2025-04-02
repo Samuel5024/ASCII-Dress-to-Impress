@@ -11,7 +11,7 @@ void displayStrippedPattern() {
     // Read each line from the file
     while (getline(shirt, stripes)) {
 
-        cout << stripes << endl;
+        cout << "   " << stripes << endl;
     }
 
     // Close the file after reading

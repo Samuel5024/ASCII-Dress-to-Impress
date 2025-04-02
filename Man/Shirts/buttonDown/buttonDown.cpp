@@ -8,8 +8,7 @@ void displayButtonPattern() {
     string buttons;
     // Read each line from the file
     while (getline(shirt, buttons)) {
-        
-        cout << buttons << endl;
+        cout << "   " << buttons << endl;
     }
 
     // Close the file after reading

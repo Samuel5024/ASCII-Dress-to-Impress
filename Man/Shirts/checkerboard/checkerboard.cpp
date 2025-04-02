@@ -11,7 +11,7 @@ void displayCheckerPattern() {
     // Read each line from the file
     while (getline(shirt, checkerboard)) {
 
-        cout << checkerboard << endl;
+        cout << "   " << checkerboard << endl;
         
     }
 
