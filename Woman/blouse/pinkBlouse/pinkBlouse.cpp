@@ -5,7 +5,7 @@ void displayPinkBlousePattern(){
     string pinkBlouse;
     
     while(getline(blouse, pinkBlouse)) {
-        cout << pinkBlouse << endl;
+        cout << "   " << pinkBlouse << endl;
     }
     
     blouse.close();

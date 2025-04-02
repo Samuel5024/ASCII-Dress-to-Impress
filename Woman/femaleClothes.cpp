@@ -59,7 +59,7 @@ ostream& operator<<(ostream& os, const femaleClothes& obj) {
 
     // Display the upper body (first 8 lines)
     for (int i = 0; i < 8 && i < totalModelLines; i++) {
-        os << modelLines[i] << endl;
+        os << "      " << modelLines[i] << endl;
     }
 
     // Display the selected clothing based on combo choice
@@ -72,7 +72,7 @@ ostream& operator<<(ostream& os, const femaleClothes& obj) {
 
     // Display the remaining body lines
     for (int i = 8 + blouseLines + pantsLines; i < totalModelLines; i++) {
-        os << modelLines[i] << endl;
+        os << "      " << modelLines[i] << endl;
     }
 
     return os;
