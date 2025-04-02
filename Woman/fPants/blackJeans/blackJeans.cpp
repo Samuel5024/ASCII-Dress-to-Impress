@@ -5,7 +5,7 @@ void displayBlackJeansPattern() {
     string blackJeans;
     
     while(getline(pants, blackJeans)) {
-        cout << "\\033[30m" << blackJeans << endl;
+        cout << blackJeans << endl;
     }
     
     pants.close();
