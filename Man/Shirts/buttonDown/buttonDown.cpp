@@ -4,11 +4,12 @@
 void displayButtonPattern() {
     // Open the file "buttonDown.txt" for reading
     fstream shirt("../Man/Shirts/buttonDown/buttonDown.txt");
-   
+
+    string buttons;
     // Read each line from the file
     while (getline(shirt, buttons)) {
         
-        court << buttons << endl;
+        cout << buttons << endl;
     }
 
     // Close the file after reading

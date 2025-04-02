@@ -1,7 +1,7 @@
 #include "maleClothes.h"
 
 // Constructor: Display the base male model
-maleClothes::maleClothes(const string& filename) : baseCharacter(filename), totalLines(0) {
+maleClothes::maleClothes() : totalLines(0) {
   displayMaleModel();
 }
 
@@ -65,23 +65,4 @@ ostream& operator<<(ostream& os, maleClothes& obj) {
   }
 
   return os;
-}
-
-bool maleClothes::printToFile() const {
-  ofstream outFile(outputFileName, ios::out | ios::app);
-  if (!outFile.is_open()) {
-    cerr << "Error: Could not open file " << outputFileName << " for writing." << endl;
-    return false;
-  }
-
-  // Create a non-const copy to use with the operator
-  // since the operator<< takes a non-const reference
-  maleClothes tempCopy = *this;
-
-  // Use the existing overloaded operator
-  outFile << tempCopy;
-
-  outFile << "\n\n";
-  outFile.close();
-  return true;
 }

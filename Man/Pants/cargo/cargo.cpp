@@ -8,8 +8,8 @@ void displayCargoPattern()
     // String variable to store each line from the file
     string cargo;
 
-    while(getline(pants, cargo) {
-        court << cargo << endl;
+    while(getline(pants, cargo)) {
+        cout << cargo << endl;
     }
     pants.close();
 }

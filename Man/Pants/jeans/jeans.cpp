@@ -10,7 +10,7 @@ void displayJeansPattern() {
 
     while(getline(pants, jeans)) {
 
-        court << jeans << endl;
+        cout << jeans << endl;
     }
     // Close the file after reading
     pants.close();

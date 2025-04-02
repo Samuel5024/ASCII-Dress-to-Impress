@@ -6,14 +6,14 @@
 using namespace std;
 
 // Custom exception classes
-class InvalidChoiceException : public exception {
+class invalidChoiceException : public exception {
 public:
     const char* what() const throw() {
         return "Invalid choice entered. Please enter a valid option.";
     }
 };
 
-class FileOpenException : public exception {
+class fileOpenException : public exception {
 public:
     const char* what() const throw() {
         return "Error opening required file. Please check that all model files exist.";
@@ -27,7 +27,7 @@ int getValidInput(int min, int max) {
     if (cin.fail() || choice < min || choice > max) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        throw InvalidChoiceException();
+        throw invalidChoiceException();
     }
 
     return choice;
@@ -60,7 +60,7 @@ int main() {
                     try {
                         displayMaleModel();
                     } catch (...) {
-                        throw FileOpenException();
+                        throw fileOpenException();
                     }
 
                     int shirtChoice, pantChoice;
@@ -75,7 +75,7 @@ int main() {
 
                     try {
                         shirtChoice = getValidInput(1, 4);
-                    } catch (const InvalidChoiceException& e) {
+                    } catch (const invalidChoiceException& e) {
                         cout << e.what() << " Using default shirt (1)." << endl;
                         shirtChoice = 1;
                     }
@@ -90,7 +90,7 @@ int main() {
 
                     try {
                         pantChoice = getValidInput(1, 4);
-                    } catch (const InvalidChoiceException& e) {
+                    } catch (const invalidChoiceException& e) {
                         cout << e.what() << " Using default pants (1)." << endl;
                         pantChoice = 1;
                     }
@@ -122,7 +122,7 @@ int main() {
 
                         try {
                             comboChoice = getValidInput(1, 2);
-                        } catch (const InvalidChoiceException& e) {
+                        } catch (const invalidChoiceException& e) {
                             cout << e.what() << " Using default style (1)." << endl;
                             comboChoice = 1;
                         }
@@ -139,7 +139,7 @@ int main() {
 
                             try {
                                 dressChoice = getValidInput(1, 4);
-                            } catch (const InvalidChoiceException& e) {
+                            } catch (const invalidChoiceException& e) {
                                 cout << e.what() << " Using default dress (1)." << endl;
                                 dressChoice = 1;
                             }
@@ -157,7 +157,7 @@ int main() {
 
                             try {
                                 blouseChoice = getValidInput(1, 4);
-                            } catch (const InvalidChoiceException& e) {
+                            } catch (const invalidChoiceException& e) {
                                 cout << e.what() << " Using default blouse (1)." << endl;
                                 blouseChoice = 1;
                             }
@@ -170,7 +170,7 @@ int main() {
 
                             try {
                                 pantChoice = getValidInput(1, 4);
-                            } catch (const InvalidChoiceException& e) {
+                            } catch (const invalidChoiceException& e) {
                                 cout << e.what() << " Using default pants (1)." << endl;
                                 pantChoice = 1;
                             }
@@ -181,7 +181,7 @@ int main() {
 
                         // Output the model with the selected clothing
                         cout << outfit;
-                    } catch (const FileOpenException& e) {
+                    } catch (const fileOpenException& e) {
                         cout << e.what() << endl;
                     } catch (const exception& e) {
                         cout << "Error creating female outfit: " << e.what() << endl;
@@ -189,7 +189,7 @@ int main() {
                     break;
                 }
                 default:
-                    throw InvalidChoiceException();
+                    throw invalidChoiceException();
             }
 
             // Ask if the user wants to continue
@@ -200,7 +200,7 @@ int main() {
             if (cin.fail()) {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                throw InvalidChoiceException();
+                throw invalidChoiceException();
             }
 
             if (tolower(continueChoice) != 'y') {
@@ -208,11 +208,11 @@ int main() {
                 continuePlaying = false;
             }
 
-        } catch (const InvalidChoiceException& e) {
+        } catch (const invalidChoiceException& e) {
             cout << e.what() << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        } catch (const FileOpenException& e) {
+        } catch (const fileOpenException& e) {
             cout << e.what() << endl;
             cout << "The program will now exit." << endl;
             return 1;

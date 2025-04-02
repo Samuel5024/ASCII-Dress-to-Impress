@@ -8,10 +8,11 @@ void displayKhakisPattern() {
     string shorts;
 
     // Read each line from the file
-    while (getline(pants, shorts)) {
-
+    while (getline(pants, shorts))
+    {
         cout << shorts << endl;
 
-    // Close the file after reading
-    pants.close();
+        // Close the file after reading
+        pants.close();
+    }
 }

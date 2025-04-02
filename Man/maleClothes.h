@@ -19,10 +19,9 @@ private:
   int pantOption;        // Stores pant option
   int totalLines;
 public:
-  maleClothes(const string& fileName = "game.txt");         // Constructor to display base model
+  maleClothes();         // Constructor to display base model
   void setShirt(int option);  // Set the shirt option
   void setPants(int option);  // Set the pants option
-  bool printToFile() const override;
   friend ostream& operator<<(ostream& os, maleClothes& obj); // Overloaded output operator
   ~maleClothes() = default;        // Destructor to display selected model
 };

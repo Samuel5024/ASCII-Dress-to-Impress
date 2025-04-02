@@ -33,7 +33,7 @@ private:
   int totalLines;
 
 public:
-  femaleClothes(const string& fileName = "game.txt");
+  femaleClothes();
 
   // Method to set the dress option
   void setDress(int option);
@@ -46,8 +46,6 @@ public:
   
   // Method to set the combo option
   void setCombo(int option);
-
-  bool printToFile() const override;
 
   // Overloaded output operator to display the clothing selections
   friend ostream& operator<<(ostream& os, const femaleClothes& obj);

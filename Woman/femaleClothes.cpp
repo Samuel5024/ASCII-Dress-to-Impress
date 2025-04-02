@@ -1,7 +1,7 @@
 #include "femaleClothes.h"
 
 // Constructor: Initializes variables
-femaleClothes::femaleClothes(const string& fileName) : baseCharacter(fileName), comboOption(0), totalLines(0) {
+femaleClothes::femaleClothes() : comboOption(0), totalLines(0) {
     displayFModel();
 }
 
@@ -76,19 +76,4 @@ ostream& operator<<(ostream& os, const femaleClothes& obj) {
     }
 
     return os;
-}
-
-bool femaleClothes::printToFile() const {
-    ofstream outFile(outputFileName, ios::out | ios::app);
-    if (!outFile.is_open()) {
-        cerr << "Error: Could not open file " << outputFileName << " for writing." << endl;
-        return false;
-    }
-
-    // Use the overloaded operator<< to write to the file
-    outFile << *this;
-
-    outFile << "\n\n";
-    outFile.close();
-    return true;
 }
