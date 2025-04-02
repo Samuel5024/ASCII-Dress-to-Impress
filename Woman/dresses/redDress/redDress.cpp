@@ -7,7 +7,7 @@ void displayRedDressPattern() {
 
     while(getline(redDress, picture)) {
         
-        court << picture << endl;
+        cout << picture << endl;
     }
     redDress.close();
 }

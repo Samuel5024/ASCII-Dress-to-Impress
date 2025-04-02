@@ -7,7 +7,7 @@ void displayJeanShortsPattern() {
     
     while(getline(pants, jeanShorts)) {
         
-        court << jeanShorts << endl;        
+        cout << jeanShorts << endl;
     }
     
     pants.close();

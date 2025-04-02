@@ -1,7 +1,6 @@
 #include "fPants.h"
 void fPants::getFPant() const {
     if (fPantOptions.find(fPantOption) != fPantOptions.end()) {
-        cout << "You have selected: " << fPantOptions.at(fPantOption) << endl;
         switch (fPantOption) {
             case 1:
                 displayBlackJeansPattern();  // Display Black Jeans pattern

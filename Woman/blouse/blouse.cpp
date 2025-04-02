@@ -1,7 +1,6 @@
 #include "blouse.h"
 void blouse::getBlouse() const {
     if (blouseOptions.find(blouseOption) != blouseOptions.end()) {
-        cout << "You have selected: " << blouseOptions.at(blouseOption) << endl;
         switch (blouseOption) {
             case 1:
                 displayPinkBlousePattern();  // Display Pink Blouse pattern
