@@ -1,18 +1,18 @@
 # ninja log v6
 2	29	7652315912102908	clean	8f9597ac2bd17386
-7	445	7652786578411089	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/dress/dress.cpp.obj	9d17c202d42036ee
 9	435	7652793414275991	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/dresses/tightDress/tightDress.cpp.obj	95cae6f2d8885463
+7	445	7652786578411089	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/dress/dress.cpp.obj	9d17c202d42036ee
+11	517	7652810128918608	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/jeans/jeans.cpp.obj	87885ef76a3b423a
 9	1500	7652778264712416	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/maleModel/maleModel.cpp.obj	d8462169aaa98f2
-9	462	7652803009987783	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/jeans/jeans.cpp.obj	87885ef76a3b423a
-6	452	7652805002641677	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/cargo/cargo.cpp.obj	c0e0f6368224cbd9
+7	519	7652810128873552	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/cargo/cargo.cpp.obj	c0e0f6368224cbd9
 13	467	7652780707108499	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Shirts/grayShirt/grayShirt.cpp.obj	ae2c2feb73eff2a7
 67	1354	7652778265292408	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/dresses/redDress/redDress.cpp.obj	fece572ef7c63c08
 8	460	7652780707058506	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Shirts/checkerboard/checkerboard.cpp.obj	ad07f7dfa5776e2
-15	433	7652779469391960	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Shirts/buttonDown/buttonDown.cpp.obj	ca4accdfd4da435d
 9	674	7652792239552621	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/femaleClothes.cpp.obj	260a62d0a5304079
-8	433	7652807148121494	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/khakis/khakis.cpp.obj	3a1894a28ea67090
-9	484	7652797830570831	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/fPants/jeanShorts/jeanShorts.cpp.obj	acbc830044839607
+15	433	7652779469391960	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Shirts/buttonDown/buttonDown.cpp.obj	ca4accdfd4da435d
 25	805	7652778349954347	CMakeFiles/ASCII_Dress_to_Impress.dir/main.cpp.obj	32ef446f52a8ccef
+8	434	7652814738650535	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/fPants/jeanShorts/jeanShorts.cpp.obj	acbc830044839607
+16	505	7652810128958782	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/khakis/khakis.cpp.obj	3a1894a28ea67090
 13	496	7652782648430170	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Shirts/strippedShirt/strippedShirt.cpp.obj	fdf655c44ae943
 32	1659	7652778264942367	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Pants/mPants.cpp.obj	814b80c36f5ae2ce
 53	1587	7652778265142360	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/Shirts/mShirts.cpp.obj	2932d15a4b272e9f
@@ -21,9 +21,9 @@
 9	439	7652798824305720	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/fPants/leggings/leggings.cpp.obj	b472b0a12e45b0c6
 13	459	7652796929970700	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/blouse/pinkBlouse/pinkBlouse.cpp.obj	77a4ab05ca99ce95
 13	486	7652797830610593	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/blouse/blueBlouse/blueBlouse.cpp.obj	715f9b0e6d89961c
-2	275	7652809520256194	build.ninja	9f8a08374c1680ff
+3	284	7652816447366183	build.ninja	9f8a08374c1680ff
 12	798	7652778349824349	CMakeFiles/ASCII_Dress_to_Impress.dir/Man/maleClothes.cpp.obj	dc9e7288292c42b5
-434	624	7652807152386069	ASCII_Dress_to_Impress.exe	4ce0fbdffcf6a2cb
+434	646	7652814742912565	ASCII_Dress_to_Impress.exe	4ce0fbdffcf6a2cb
 62	1588	7652778265242362	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/dresses/dresses.cpp.obj	2fa0e4c7448550b6
 1333	2541	7652778277949420	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/fPants/fPants.cpp.obj	8f584b001257d416
 1359	2534	7652778278214100	CMakeFiles/ASCII_Dress_to_Impress.dir/Woman/blouse/blouse.cpp.obj	db7c48ea75beb754
