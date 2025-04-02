@@ -5,7 +5,7 @@ void displayBlueBlousePattern() {
     string blueBlouse;
     
     while (getline(blouse, blueBlouse)) {
-        cout << "\\033[34m" << blueBlouse << endl;
+        cout <<  blueBlouse << endl;
     }
     
     blouse.close();
