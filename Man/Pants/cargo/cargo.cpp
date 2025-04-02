@@ -9,7 +9,7 @@ void displayCargoPattern()
     string cargo;
 
     while(getline(pants, cargo) {
-        court << pants << endl;
+        court << cargo << endl;
     }
     pants.close();
 }
